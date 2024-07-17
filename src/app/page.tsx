@@ -1,10 +1,13 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import BusinessFeatures from "@/components/landing/business-features";
+import Hero from "@/components/landing/hero";
+import { TalentFeaturesSection } from "@/components/landing/talent-features";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-     <Button variant={"destructive"}> Hello </Button>
+    <main className="w-full max-w-7xl p-0 m-0  mx-auto">
+      <Hero />
+      <TalentFeaturesSection />
+      <BusinessFeatures />
     </main>
   );
 }
