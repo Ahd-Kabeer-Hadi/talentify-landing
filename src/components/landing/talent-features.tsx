@@ -145,7 +145,7 @@ export function TalentFeaturesSection() {
       content: (
         <div className="flex flex-col gap-6 py-6 w-full mt-8">
           {Benefits.map((benefit) => (
-            <Accordion type="single" collapsible>
+            <Accordion type="single" collapsible key={benefit.title}>
               <AccordionItem value="item-1">
                 <AccordionTrigger className="w-full text-start text-lg">
                   {benefit.title}
