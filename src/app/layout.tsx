@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import ScrollToTopButton from "@/components/ui/Scroll-to-top-button";
 
 const glegoo = Glegoo({
   weight: ["400", "700"],
@@ -45,6 +46,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
+          <ScrollToTopButton />
         </ThemeProvider>
       </body>
     </html>
