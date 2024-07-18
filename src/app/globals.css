@@ -25,8 +25,8 @@
     --ring: 100 84% 40%;
     --radius: 0.5rem;
 
-    --font-heading: 'Glegoo', serif;
-    --font-body: 'Lekton', sans-serif;
+    --font-heading: "Glegoo", serif;
+    --font-body: "Lekton", sans-serif;
   }
 
   .dark {
@@ -51,6 +51,9 @@
     --ring: 100 84% 60%;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 
 @layer base {
   * {
@@ -60,7 +63,34 @@
     @apply bg-background text-foreground;
     font-family: var(--font-body);
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
+  }
+
+  .underline-transition {
+    position: relative;
+  }
+
+  .underline-transition::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+
+  .underline-transition:hover::after {
+    transform: scaleX(.3);
+    transform-origin: bottom left;
   }
 }

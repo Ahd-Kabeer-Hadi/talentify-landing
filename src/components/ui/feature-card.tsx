@@ -9,6 +9,7 @@ interface FeatureCardProps {
   variant?: "default" | "animated";
   className?: string;
   children?: React.ReactNode;
+  sectionCount?: number;
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({
@@ -17,6 +18,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   icon,
   index = 0,
   variant = "default",
+  sectionCount = 4,
   className,
   children,
 }) => {
@@ -26,7 +28,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         className={cn(
           "flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800",
           (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
-          index < 4 && "lg:border-b dark:border-neutral-800",
+          index < sectionCount && "lg:border-b dark:border-neutral-800",
           className
         )}
       >
@@ -35,7 +37,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         ) : (
           <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-white dark:from-neutral-800 to-transparent pointer-events-none" />
         )}
-        <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400 group-hover/feature:text-primary">
+        <div className="mb-4 relative mx-auto z-10 px-10 text-neutral-600 dark:text-neutral-400 group-hover/feature:text-primary">
           {icon}
         </div>
         <div className="text-lg font-bold mb-2 relative z-10 px-10">
@@ -44,7 +46,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             {title}
           </span>
         </div>
-        <p className="text-base text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
+        <p className="text-base text-neutral-600 dark:text-neutral-300 max-w-xs mx-auto relative z-10 px-10">
           {description}
         </p>
       </div>
@@ -72,7 +74,7 @@ const FeatureTitle: React.FC<FeatureTitleProps> = ({ children, className }) => {
   return (
     <p
       className={cn(
-        "max-w-5xl mx-auto text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug",
+        "max-w-5xl text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug",
         className
       )}
     >

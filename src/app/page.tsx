@@ -6,8 +6,12 @@ export default function Home() {
   return (
     <main className="w-full max-w-7xl p-0 m-0  mx-auto">
       <Hero />
-      <TalentFeaturesSection />
-      <BusinessFeatures />
+      <section id="talent-features">
+        <TalentFeaturesSection />
+      </section>
+      <section id="business-features">
+        <BusinessFeatures />
+      </section>
     </main>
   );
 }

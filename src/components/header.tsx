@@ -21,28 +21,35 @@ import {
   DrawerTrigger,
 } from "./ui/drawer";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 function Header() {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
   const { scrollY } = useScroll();
-  const backgroundColor = useTransform(
-    scrollY,
-    [0, 50],
-    [
-      theme === "dark" ? "rgba(0, 0, 0, 0)" : "rgba(255, 255, 255, 0)",
-      theme === "dark" ? "rgba(0, 0, 0, 0.7)" : "rgba(255, 255, 255, 0.7)",
-    ]
-  );
-  const backdropFilter = useTransform(
-    scrollY,
-    [0, 50],
-    ["blur(0px)", "blur(10px)"]
-  );
-  const boxShadow = useTransform(
-    scrollY,
-    [0, 50],
-    ["0px 0px 0px rgba(0, 0, 0, 0)", "0px 4px 6px rgba(0, 0, 0, 0.1)"]
-  );
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const backgroundColor = useTransform(scrollY, [0, 50], [
+    theme === "dark" || resolvedTheme === "dark"
+      ? "rgba(0, 0, 0, 0)"
+      : "rgba(255, 255, 255, 0)",
+    theme === "dark" || resolvedTheme === "dark"
+      ? "rgba(0, 0, 0, 0.7)"
+      : "rgba(255, 255, 255, 0.7)",
+  ]);
+
+  const backdropFilter = useTransform(scrollY, [0, 50], [
+    "blur(0px)",
+    "blur(10px)",
+  ]);
+  const boxShadow = useTransform(scrollY, [0, 50], [
+    "0px 0px 0px rgba(0, 0, 0, 0)",
+    "0px 4px 6px rgba(0, 0, 0, 0.1)",
+  ]);
+
 
   return (
     <motion.header
@@ -60,34 +67,31 @@ function Header() {
           </Link>
         </div>
         <div className="flex items-center justify-self-end justify-between max-w-3xl gap-6">
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    <motion.p whileHover={{ scale: 1.05 }}>
-                      For Developers
-                    </motion.p>
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    <motion.p whileHover={{ scale: 1.05 }}>
-                      For Business
-                    </motion.p>
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <nav className="flex items-center justify-between gap-6">
+            <Link href="#talent-features" legacyBehavior passHref>
+              <motion.p
+                whileHover={{ scale: 1.05 }}
+                className="underline-transition"
+              >
+                For Developers
+              </motion.p>
+            </Link>
+            <Link href="#business-features" legacyBehavior passHref>
+              <motion.p
+                whileHover={{ scale: 1.05 }}
+                className="underline-transition"
+              >
+                For Business
+              </motion.p>
+            </Link>
+          </nav>
+
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button variant={"default"} size={"lg"}>
               Join Talentify
             </Button>
           </motion.div>
-          {/* <ThemeSwitcher /> */}
+          <ThemeSwitcher />
         </div>
       </div>
       <div className="sticky top-6 md:hidden flex w-full items-center justify-between ">
@@ -98,7 +102,7 @@ function Header() {
         </div>
 
         <div className="flex items-center justify-self-end gap-4">
-          {/* <ThemeSwitcher /> */}
+          <ThemeSwitcher />
           <Drawer>
             <DrawerTrigger>
               <motion.svg
