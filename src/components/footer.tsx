@@ -25,42 +25,40 @@ function Footer() {
         </div>
         <div className="flex flex-col space-y-2">
           <h5 className="font-semibold">Quick Links</h5>
-          <Link href="/about" legacyBehavior passHref>
+          <Link href="/" legacyBehavior passHref>
             <a className="text-sm">About Us</a>
           </Link>
 
-          <Link href="/contact" legacyBehavior passHref>
+          <Link href="/" legacyBehavior passHref>
             <a className="text-sm">Contact</a>
           </Link>
-          <Link href="/faq" legacyBehavior passHref>
-            <a className="text-sm">FAQ</a>
+          <Link href="https://join.slack.com/t/talentifyonde-9cc3667/shared_invite/zt-2n9gyim69-WV_XK58zkslJlcFR4XiV3A"  target="_blank" legacyBehavior passHref>
+            <a className="text-sm">HR Club</a>
           </Link>
         </div>
         <div className="flex flex-col space-y-2">
           <h5 className="font-semibold">Resources</h5>
-          <Link href="/blog" legacyBehavior passHref>
-            <a className="text-sm">Blog</a>
+          <Link href="https://discord.gg/aFVjtKwr" target="_blank"  legacyBehavior passHref>
+            <a className="text-sm">Dev community</a>
           </Link>
-          <Link href="/case-studies" legacyBehavior passHref>
-            <a className="text-sm">Case Studies</a>
-          </Link>
-          <Link href="/support" legacyBehavior passHref>
+         
+          <Link href="/" legacyBehavior passHref>
             <a className="text-sm">Support</a>
           </Link>
-          <Link href="/privacy-policy" legacyBehavior passHref>
+          <Link href="/" legacyBehavior passHref>
             <a className="text-sm">Privacy Policy</a>
           </Link>
         </div>
         <div className="flex flex-col space-y-2">
           <h5 className="font-semibold">Company</h5>
-          <Link href="/team" legacyBehavior passHref>
+          <Link href="/" legacyBehavior passHref>
             <a className="text-sm">Our Team</a>
           </Link>
 
-          <Link href="/partnerships" legacyBehavior passHref>
+          <Link href="/" legacyBehavior passHref>
             <a className="text-sm">Partnerships</a>
           </Link>
-          <Link href="/terms-of-service" legacyBehavior passHref>
+          <Link href="/" legacyBehavior passHref>
             <a className="text-sm">Terms of Service</a>
           </Link>
         </div>

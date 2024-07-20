@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import heroImage from "../../../public/heroImage.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -11,17 +12,24 @@ function Hero() {
           Where Talent <br /> Meets Opportunity
         </h1>
         <p className="textlg md:text-xl font-light">
-          Talentify is a community of vetted & on-demand talent network of experienced
-          full-stack developers. Get upskilled, reskilled and hired on demand.
+          Talentify is a community of vetted & on-demand talent network of
+          experienced full-stack developers. Get upskilled, reskilled and hired
+          on demand.
         </p>
         <div className="flex items-center gap-4">
-          <Button
-            variant="default"
-            size="default"
-            className="max-w-xs mt-8 transform transition-transform duration-300 hover:scale-105 active:scale-95"
+          <Link
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfYXNYynLLkOJk_2t5Gc5uLUmWEo2TPauoDn9yD245Wnjvp9Q/viewform"
+            target="_blank"
+            passHref
           >
-            <p className="text-lg">Join Talentify</p>
-          </Button>
+            <Button
+              variant="default"
+              size="default"
+              className="max-w-xs mt-8 transform transition-transform duration-300 hover:scale-105 active:scale-95"
+            >
+              <p className="text-lg">Join Talentify</p>
+            </Button>
+          </Link>
           {/* <Button
             variant="outline"
             size="default"
