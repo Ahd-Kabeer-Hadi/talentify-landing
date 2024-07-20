@@ -32,24 +32,29 @@ function Header() {
     setMounted(true);
   }, []);
 
-  const backgroundColor = useTransform(scrollY, [0, 50], [
-    theme === "dark" || resolvedTheme === "dark"
-      ? "rgba(0, 0, 0, 0)"
-      : "rgba(255, 255, 255, 0)",
-    theme === "dark" || resolvedTheme === "dark"
-      ? "rgba(0, 0, 0, 0.7)"
-      : "rgba(255, 255, 255, 0.7)",
-  ]);
+  const backgroundColor = useTransform(
+    scrollY,
+    [0, 50],
+    [
+      theme === "dark" || resolvedTheme === "dark"
+        ? "rgba(0, 0, 0, 0)"
+        : "rgba(255, 255, 255, 0)",
+      theme === "dark" || resolvedTheme === "dark"
+        ? "rgba(0, 0, 0, 0.7)"
+        : "rgba(255, 255, 255, 0.7)",
+    ]
+  );
 
-  const backdropFilter = useTransform(scrollY, [0, 50], [
-    "blur(0px)",
-    "blur(10px)",
-  ]);
-  const boxShadow = useTransform(scrollY, [0, 50], [
-    "0px 0px 0px rgba(0, 0, 0, 0)",
-    "0px 4px 6px rgba(0, 0, 0, 0.1)",
-  ]);
-
+  const backdropFilter = useTransform(
+    scrollY,
+    [0, 50],
+    ["blur(0px)", "blur(10px)"]
+  );
+  const boxShadow = useTransform(
+    scrollY,
+    [0, 50],
+    ["0px 0px 0px rgba(0, 0, 0, 0)", "0px 4px 6px rgba(0, 0, 0, 0.1)"]
+  );
 
   return (
     <motion.header
@@ -62,13 +67,13 @@ function Header() {
     >
       <div className="hidden w-full md:flex items-center justify-between gap-6">
         <div className="flex items-center max-w-40 space-x-5 cursor-pointer">
-          <Link href="/" legacyBehavior passHref>
+          <Link href="/"  passHref>
             <Image src={logo} alt="logo" className="object-contain" />
           </Link>
         </div>
         <div className="flex items-center justify-self-end justify-between max-w-3xl gap-6">
           <nav className="flex items-center justify-between gap-6">
-            <Link href="#talent-features" legacyBehavior passHref>
+            <Link href="#talent-features"  passHref>
               <motion.p
                 whileHover={{ scale: 1.05 }}
                 className="underline-transition"
@@ -76,7 +81,7 @@ function Header() {
                 For Developers
               </motion.p>
             </Link>
-            <Link href="#business-features" legacyBehavior passHref>
+            <Link href="#business-features"  passHref>
               <motion.p
                 whileHover={{ scale: 1.05 }}
                 className="underline-transition"
@@ -87,16 +92,23 @@ function Header() {
           </nav>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button variant={"default"} size={"lg"}>
-              Join Talentify
-            </Button>
+            <Link
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfYXNYynLLkOJk_2t5Gc5uLUmWEo2TPauoDn9yD245Wnjvp9Q/viewform"
+              
+              passHref
+              target="_blank"
+            >
+              <Button variant={"default"} size={"lg"}>
+                Join Talentify
+              </Button>
+            </Link>
           </motion.div>
           <ThemeSwitcher />
         </div>
       </div>
       <div className="sticky top-6 md:hidden flex w-full items-center justify-between ">
         <div className="flex items-center max-w-40 space-x-5 cursor-pointer">
-          <Link href="/" legacyBehavior passHref>
+          <Link href="/"  passHref>
             <Image src={logo} alt="logo" className="object-contain" />
           </Link>
         </div>
@@ -129,7 +141,7 @@ function Header() {
                 <NavigationMenu>
                   <NavigationMenuList className="w-full p-4 flex flex-col items-center justify-center gap-4">
                     <NavigationMenuItem>
-                      <Link href="/docs" legacyBehavior passHref>
+                      <Link href="/docs"  passHref>
                         <NavigationMenuLink
                           className={navigationMenuTriggerStyle()}
                         >
@@ -140,7 +152,7 @@ function Header() {
                       </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                      <Link href="/docs" legacyBehavior passHref>
+                      <Link href="/docs"  passHref>
                         <NavigationMenuLink
                           className={navigationMenuTriggerStyle()}
                         >
@@ -154,9 +166,16 @@ function Header() {
                 </NavigationMenu>
               </DrawerHeader>
               <DrawerFooter className="p-4 mb-3">
-                <Button variant={"default"} size={"lg"}>
-                  Join Talentify
-                </Button>
+                <Link
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfYXNYynLLkOJk_2t5Gc5uLUmWEo2TPauoDn9yD245Wnjvp9Q/viewform"
+                  
+                  passHref
+                  target="_blank"
+                >
+                  <Button variant={"default"} size={"lg"}>
+                    Join Talentify
+                  </Button>
+                </Link>
               </DrawerFooter>
             </DrawerContent>
           </Drawer>

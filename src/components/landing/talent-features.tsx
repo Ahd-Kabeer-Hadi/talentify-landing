@@ -75,7 +75,7 @@ export function TalentFeaturesSection() {
     {
       title: "Application",
       description:
-        "Tell us about yourself, your expertise, areas for improvement, and your passion as a developer. We&#39;re developers too, and we&#39;re here to support you!",
+        "Tell us about yourself, your expertise, areas for improvement, and your passion as a developer. We're developers too, and we're here to support you!",
       className:
         "col-span-1 group min-h-[400px] gap-4 flex flex-col items-center justify-center hover:bg-primary hover:text-black transition ease-in-out duration-300",
       image: apply,
@@ -91,7 +91,7 @@ export function TalentFeaturesSection() {
     {
       title: "Career Growth",
       description:
-        "Welcome aboard! You&#39;ve demonstrated your passion and skills. Talentify is now your platform to reshape your career and achieve your professional goals.",
+        "Welcome aboard! You've demonstrated your passion and skills. Talentify is now your platform to reshape your career and achieve your professional goals.",
       className:
         "col-span-1 group min-h-[400px] gap-4 flex flex-col items-center justify-center hover:bg-primary hover:text-black transition ease-in-out duration-300",
       image: growth,
@@ -113,7 +113,7 @@ export function TalentFeaturesSection() {
     {
       title: "Independent Contractor or Career Break",
       description:
-        "We understand the uncertainties you face. We&#39;re here to help you re-enter the industry or secure the work you deserve.",
+        "We understand the uncertainties you face. We're here to help you re-enter the industry or secure the work you deserve.",
       className: "col-span-1 lg:col-span-4",
     },
   ];
